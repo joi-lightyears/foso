@@ -48,7 +48,7 @@ function Reactions({ type, count, active = false, className = "" }: ReactionProp
                 />
             </div>
             <p className={`font-bold text-base leading-6 tracking-normal text-center ${textColor}`}>{count}</p>
-            <p className={`font-normal text-sm leading-6 tracking-normal text-center ${textColor}`}>{type}</p>
+            <p className={`font-normal text-sm leading-6 tracking-normal text-center whitespace-nowrap ${textColor}`}>{type}</p>
         </div>
     );
 }
