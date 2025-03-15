@@ -5,7 +5,7 @@ import { ArrowUpRight, CaretDown, Icon_Country } from "../app/IconsSvg";
 function Navbar() {
     return (
             <div className="fixed flex justify-center items-center left-[50%] transform translate-x-[-50%] top-[20px]
-            w-[calc(100%-500px)] max-w-[1160px]
+            w-[calc(100%-300px)] max-w-[1160px]
             h-[79.41px]  gap-[64px] py-[12px] px-[36px] rounded-[40px] bg-[#FFFFFFA6] backdrop-blur-[24.9971px] shadow-custom
             z-50
             ">

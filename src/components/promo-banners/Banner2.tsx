@@ -21,7 +21,7 @@ function Banner2() {
                       Kết nối, chia sẻ, cùng phát triển!</h3>
 
                         
-                        <Link href="/" className="w-full h-[50px] rounded-[40px] pt-[8px] pr-[24px] pb-[8px] pl-[24px] gap-[32px] border-2 border-white font-bold text-[14px] leading-[150%] tracking-normal capitalize text-white flex justify-between items-center">
+                        <Link href="/" className="w-full h-[50px] rounded-[40px] pt-[8px] pr-[24px] pb-[8px] pl-[24px] gap-[32px] border-2 border-white font-bold text-[14px] leading-[150%] tracking-normal capitalize text-white flex justify-between items-center whitespace-nowrap">
                           Tham Gia Ngay
                           <ArrowUpRight className="w-[18px] h-[18px]"/>
                         </Link>
