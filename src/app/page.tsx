@@ -98,20 +98,24 @@ export default function Home() {
                         <span className="text-[#667F93]">36</span>
                       </li>
                       <li className="w-full h-[35px] flex justify-between pb-[8px] border-b-[1px] border-b-[#F1F5F7]">
-                        <Link href="/" className="font-medium text-[18px] leading-[150%] tracking-normal text-[#33404A]">Tất cả</Link>
-                        <span className="text-[#667F93]">108</span>
+                        <Link href="/" className="font-medium text-[18px] leading-[150%] tracking-normal text-[#33404A]">Thiết kế App Mobile</Link>
+                        <span className="text-[#667F93]">13</span>
                       </li>
                       <li className="w-full h-[35px] flex justify-between pb-[8px] border-b-[1px] border-b-[#F1F5F7]">
-                        <Link href="/" className="font-medium text-[18px] leading-[150%] tracking-normal text-[#33404A]">Tất cả</Link>
-                        <span className="text-[#667F93]">108</span>
+                        <Link href="/" className="font-medium text-[18px] leading-[150%] tracking-normal text-[#33404A]">Quản Lý Sản Xuất</Link>
+                        <span className="text-[#667F93]">25</span>
                       </li>
                       <li className="w-full h-[35px] flex justify-between pb-[8px] border-b-[1px] border-b-[#F1F5F7]">
-                        <Link href="/" className="font-medium text-[18px] leading-[150%] tracking-normal text-[#33404A]">Tất cả</Link>
-                        <span className="text-[#667F93]">108</span>
+                        <Link href="/" className="font-medium text-[18px] leading-[150%] tracking-normal text-[#33404A]">Quản Lý Bán Hàng</Link>
+                        <span className="text-[#667F93]">22</span>
                       </li>
                       <li className="w-full h-[35px] flex justify-between pb-[8px] border-b-[1px] border-b-[#F1F5F7]">
-                        <Link href="/" className="font-medium text-[18px] leading-[150%] tracking-normal text-[#33404A]">Tất cả</Link>
-                        <span className="text-[#667F93]">108</span>
+                        <Link href="/" className="font-medium text-[18px] leading-[150%] tracking-normal text-[#33404A]">Báo Chí Nói Về FOSO</Link>
+                        <span className="text-[#667F93]">7</span>
+                      </li>
+                      <li className="w-full h-[35px] flex justify-between pb-[8px] border-b-[1px] border-b-[#F1F5F7]">
+                        <Link href="/" className="font-medium text-[18px] leading-[150%] tracking-normal text-[#33404A]">Tin Tức Về FOSO</Link>
+                        <span className="text-[#667F93]">5</span>
                       </li>
                       
                     </ul>
