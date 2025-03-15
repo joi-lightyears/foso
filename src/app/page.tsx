@@ -1,103 +1,141 @@
+"use client"
 import Image from "next/image";
+import Header from "../components/Header";
+import { ArrowUpRight, GradientBg, GradientBg2, SearchIcon } from "./IconsSvg";
+import Link from "next/link";
+import Blog from "../components/Blog";
+import Banner2 from "../components/promo-banners/Banner2";
+import Banner1 from "../components/promo-banners/Banner3";
+import { useState } from "react";
+import Pagination from "../components/ui/Pagination";
 
 export default function Home() {
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const totalPages: number = 10;
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="pb-[100px] w-full top-[170px] relative">
+      <div className="absolute w-[500px] h-[500px] top-[258px] left-[-96px] flex justify-center items-center">
+        <GradientBg />
+      </div>
+      <div className="absolute -z-10 w-[500px] h-[500px] bottom-[108px] right-[-96px] flex justify-center items-center">
+        <GradientBg2 />
+      </div>
+      <Header />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      <section id="why-choose-us" className="w-full h-full px-[240px] flex flex-col gap-[72px] mt-[96px]">
+        <div className="w-full ">
+          <div className="w-full">
+            <section id="blog " className="flex md:flex-row gap-8">
+
+              {/* article */}
+                <div className="w-full  flex flex-col gap-8">
+                  <h1 className="font-extrabold text-[36px] leading-[200%] tracking-normal align-middle capitalize">Tất Cả Bài Viết</h1>
+                  {/* blogs container */}
+                  <div className="flex flex-col gap-[48px]">
+
+                    {/* banner */}
+                    <div className="w-full h-[318px] bg-banner-gradient rounded-[40px] overflow-hidden relative p-[50px]">
+                      <div className="h-full flex justify-start items-center">
+                        <div className="h-full flex flex-col justify-between w-[550px]">
+                          <div className="font-[700] text-[36px] leading-[100%] tracking-normal text-white w-[376px]">
+                            Gia nhập cộng đồng FMRP – Kết nối, chia sẻ, cùng phát triển!
+                          </div>
+                          <Link href="/" className="w-[216px] h-[50px] rounded-[40px] pt-[8px] pr-[24px] pb-[8px] pl-[24px] gap-[32px] border-2 border-white font-bold text-[14px] leading-[150%] tracking-normal capitalize text-white flex justify-between items-center">
+                            Tham Gia Ngay
+                            <ArrowUpRight className="w-[14px] h-[14px]"/>
+                          </Link>
+                        </div>
+                        <div className="absolute right-0 bottom-0">
+                          <Image 
+                            src="/assets/images/banner.png" 
+                            alt="FMRP Community" 
+                            width={400} 
+                            height={300}
+                            className="object-contain"
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Blog post grid */}
+                    <div className="grid md:grid-cols-2 gap-[32px]">
+                      {Array.from({ length: 6 }).map((_, index) => <Blog key={index} />)}
+                    </div>
+                  </div>
+                </div>
+
+                {/* side banner */}
+                <div className="w-full md:w-1/3 flex flex-col gap-[32px]">
+
+                  {/* search place */}
+                  <div className="relative flex flex-col items-start gap-[24px]">
+                      <div className="font-extrabold text-[24px] leading-[200%] tracking-normal align-middle capitalize">Tìm Kiếm</div>
+                      <div className="relative w-full">
+                        <input
+                          type="text"
+                          placeholder="Tìm kiếm bài viết"
+                          className="w-full h-[72px] justify-between rounded-[12px] pt-[12px] pr-[78px] pb-[12px] pl-[24px] placeholder:text-[#ACB3C7] focus-visible:outline-none  focus-visible:ring-[#f3f5f726] search-box-shadow"
+                        />
+                        <button className="absolute right-[12px] top-1/2 transform -translate-y-1/2 bg-[#15AA7A] text-white p-[12px] rounded-[12px] transition hover:opacity-[.85] cursor-pointer">
+                          <SearchIcon />
+                        </button>
+
+                      </div>
+                  </div>
+
+                  {/* Categories section */}
+                  <div className="w-full flex flex-col gap-[24px]">
+                    <h3 className="font-extrabold text-[24px] leading-[200%] tracking-normal align-middle capitalize">Danh Mục</h3>
+
+                    {/* menu */}
+                    <ul className="flex flex-col gap-[16px]">
+                      <li className="w-full h-[35px] flex justify-between pb-[8px] border-b-[1px] border-b-[#F1F5F7]">
+                        <Link href="/" className="font-medium text-[18px] leading-[150%] tracking-normal text-[#33404A]">Tất cả</Link>
+                        <span className="text-[#667F93]">108</span>
+                      </li>
+                      <li className="w-full h-[35px] flex justify-between pb-[8px] border-b-[1px] border-b-[#F1F5F7]">
+                        <Link href="/" className="font-medium text-[18px] leading-[150%] tracking-normal text-[#33404A]">Thiết kế Website</Link>
+                        <span className="text-[#667F93]">36</span>
+                      </li>
+                      <li className="w-full h-[35px] flex justify-between pb-[8px] border-b-[1px] border-b-[#F1F5F7]">
+                        <Link href="/" className="font-medium text-[18px] leading-[150%] tracking-normal text-[#33404A]">Tất cả</Link>
+                        <span className="text-[#667F93]">108</span>
+                      </li>
+                      <li className="w-full h-[35px] flex justify-between pb-[8px] border-b-[1px] border-b-[#F1F5F7]">
+                        <Link href="/" className="font-medium text-[18px] leading-[150%] tracking-normal text-[#33404A]">Tất cả</Link>
+                        <span className="text-[#667F93]">108</span>
+                      </li>
+                      <li className="w-full h-[35px] flex justify-between pb-[8px] border-b-[1px] border-b-[#F1F5F7]">
+                        <Link href="/" className="font-medium text-[18px] leading-[150%] tracking-normal text-[#33404A]">Tất cả</Link>
+                        <span className="text-[#667F93]">108</span>
+                      </li>
+                      <li className="w-full h-[35px] flex justify-between pb-[8px] border-b-[1px] border-b-[#F1F5F7]">
+                        <Link href="/" className="font-medium text-[18px] leading-[150%] tracking-normal text-[#33404A]">Tất cả</Link>
+                        <span className="text-[#667F93]">108</span>
+                      </li>
+                      
+                    </ul>
+                  </div>
+
+                  {/* Promo banner */}
+                  <Banner1 />
+                  <Banner2/>
+
+              
+                </div>
+
+
+            </section>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+
+        {/* pagnition */}
+        <Pagination 
+        totalPages={totalPages} 
+        currentPage={currentPage} 
+        onPageChange={(page: number) => setCurrentPage(page)} 
+      />
+      </section>
     </div>
   );
 }

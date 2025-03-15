@@ -1,26 +1,106 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+:root{
+  --background: #F9FBFC;
+  --foreground: #050505
+  /* smooth scroll */
 }
+
+
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-inter: var(--font-inter);
+  --font-raleway: var(--font-raleway);
+  --font-racing: var(--font-racing-sans-one);
+
+
+  --shadow-custom: 0px 4px 69px -23px rgba(0, 0, 0, 0.1);
+
+  --bg-gradient-button: linear-gradient(360deg, rgba(9, 9, 11, 0.05) 0%, rgba(9, 9, 11, 0.1) 100%);
+  --bg-greeen-gradient: linear-gradient(0deg, #1AD598, #1AD598), radial-gradient(100% 100% at 50% 0%, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 100%);
+  
+  
+
+  
+  
+  
 }
 
-@media (prefers-color-scheme: dark) {
+.rate-blog-shadow{
+  box-shadow: 0px 1px 2px 0px #1212170F;
+  box-shadow: 0px 1px 3px 0px #1212171A;
+}
+.search-box-shadow{
+  box-shadow: 0px 12px 24px -4px #919EAB29;
+}
+.bg-promo-banner{
+  background: linear-gradient(36.82deg, #013DA0 2.16%, #0142A9 12.83%, #0148B3 23.51%, #024EBC 34.18%, #0254C5 44.85%, #025ACE 55.53%, #0261D7 66.2%, #0267E1 76.87%, #036EEA 87.55%, #0375F3 98.22%);
+}
+.bg-banner-gradient{
+  background: linear-gradient(77.74deg, #013DA0 11.85%, #0142A9 20.65%, #0148B3 29.45%, #024EBC 38.25%, #0254C5 47.05%, #025ACE 55.84%, #0261D7 64.64%, #0267E1 73.44%, #036EEA 82.24%, #0375F3 91.04%);
+}
+.bg-green-gradient-blur{
+  background: linear-gradient(90deg, #E0FFCC 0%, #CCFFEC 100%);
+}
+.bg-green-gradient-blur::after{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 20;
+  width: calc(100% + 150px);
+  height: calc(100% + 150px);
+  backdrop-filter: blur(267.4px)
+
+}
+.foso-logo {
+  font-weight: 800;
+  background: #53B086;
+  background: linear-gradient(to right, #53B086 0%, #94F9C0 50%, #53B086 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+}
+
+.bg-gradient-button {
+  background: var(--bg-gradient-button);
+}
+.bg-green-gradient {
+  background: var(--bg-greeen-gradient);
+}
+.border-button {
+  /* border all sides */
+  border: 1px solid;
+  border-color: #8a8b8c25;
+  /* border-image-source: linear-gradient(360deg, rgba(9, 9, 11, 0.05) 0%, rgba(9, 9, 11, 0.1) 100%); */
+}
+.border-button-green{
+  border: 1px solid;
+  border-image-source: radial-gradient(50% 93.75% at 50% 6.25%, #A3EED6 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
+} */
 
 body {
   background: var(--background);
+
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+
+}
+html{
+  scroll-behavior: smooth;
+
+}
+::-webkit-scrollbar{
+  width: 0;
 }
